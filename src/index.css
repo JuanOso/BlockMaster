@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,500;1,600&display=swap');
+:root {
+  --main-bg-color: rgba(254, 217, 65, 1);
+}
+
+:-webkit-scrollbar {
+  display: none;
+  }
+
+.bgMain {
+  background-color: var(--main-bg-color);
+  
+}
+
+.colorMain {
+  color: var(--main-bg-color);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +23,113 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.bgYellow {
+  background-color: var(--main-bg-color);
+}
+
+.desplazar {
+  transform: translate(0, 50px );
+
+}
+
+.heighImg {
+  height: 35vh;
+}
+
+.desplazarBotones {
+  transform: translate(0, 350px );
+
+}
+
+.imagen1 {
+  background-image: url(https://img.ecartelera.com/noticias/fotos/22300/22390/1.jpg);
+}
+.imagen2 {
+  background-image: url(https://sm.ign.com/t/ign_es/screenshot/s/spider-man/spider-man-3-venom-suit-horizontal-poster_w4nx.620.jpg);
+}
+.imagen3 {
+  background-image: url(https://www.zinefilos.com/wp-content/uploads/2014/09/Guardianes-de-la-Galaxia-Banner.jpg);
+}
+.imagen4 {
+  background-image: url(https://soundtrackfest.com/wp-content/uploads/2019/12/LionKing2019-LiveToPicture-WorldPremiere-Banner.jpg);
+}
+.imagen5 {
+  background-image: url(https://www.bfparis.com.ar/wp-content/uploads/2020/07/Chernobyl_Horizontal.jpg);
+}
+
+.imagen1, .imagen2, .imagen3, .imagen4, .imagen5 {
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+}
+
+@media (max-width: 768px){
+  .heighImg {
+    height: 18vh;
+  }
+}
+
+.borderAzul {
+  border: 2px solid #0E3FA9;
+  border-left: none;
+}
+
+.borderAmarillo {
+  border: 2px solid var(--main-bg-color);
+  border-left: none;
+}
+
+/* .pageLink {
+  position: relative;
+  display: block;
+  color: white;
+  text-decoration: none;
+  background-color: var(--main-bg-color);
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
+.pageItem {
+  margin-left: 5px;
+} 
+
+.pageItem .active1 .pageLink {
+  color: black;
+  background-color: red;
+
+} */
+
+
+/* 
+.linkPagination:hover {
+  color: black;
+  font-weight: bold;
+}
+.linkPagination:focus {
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+.linkPagination .active1 {
+  color: black;
+  font-weight: bold;
+}
+
+.pagination1{
+  display: flex;
+} */
+
+.active1 {
+  background-color: red;
 }

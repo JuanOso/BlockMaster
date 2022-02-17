@@ -1,0 +1,18 @@
+Para traer las imagenes de la api moviedb
+asi se trae en formato w500
+
+https://image.tmdb.org/t/p/w500/  + enlace de la imagen
+
+y así original 
+
+https://image.tmdb.org/t/p/original/
+
+API
+
+https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1
+
+busqueda por nombre pelicula
+https://api.themoviedb.org/3/search/movie?api_key=bca456022767f1edade3f2c5efa82d09&language=en-US&query={variable}&page=1&include_adult=false
+
+plan de trabajo sprint 3
+
