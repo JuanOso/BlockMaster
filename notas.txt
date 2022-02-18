@@ -16,3 +16,11 @@ https://api.themoviedb.org/3/search/movie?api_key=bca456022767f1edade3f2c5efa82d
 
 plan de trabajo sprint 3
 
+obtener la ubicacion
+proyecto jenny
+https://github.com/girengri/ubicacionactualreact/blob/master/src/App.js
+
+kraken front6
+https://app.gitkraken.com/glo/card/42c512f4b8dc449c8ab5e1ad5de9f2cd
+
+

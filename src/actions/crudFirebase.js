@@ -1,16 +1,14 @@
-import { addDoc, collection, getDocs, where, query, deleteDoc, doc } from "firebase/firestore"
+import { addDoc, collection, getDocs, where, query, deleteDoc, doc, updateDoc } from "firebase/firestore"
 import { db } from "../firebase/firebaseConfig"
 import { typesCrud } from "../types/types"
 
 
 export const agregarLista = (pelicula, peliculas) => {
-
-        return async (dispatch) => {
-        dispatch(readListAsync())
+        
         console.log(peliculas);
 
+
         addDoc(collection(db, 'listaFavoritas'), pelicula) 
-}
 }
 
 export const readListAsync  = () => {
@@ -38,6 +36,7 @@ export const readList = (lista) => {
 }
 
 export const deleteMovieasync = (id) => {
+        console.log(id);
         return async (dispatch) => {
                 const momentanea = collection(db, 'listaFavoritas')
                 const q = query(momentanea, where("id", "==", id))
@@ -57,3 +56,17 @@ export const deleteMovie = (id) => {
                 payload: id
         }
 }
+
+export const updateMovieAsync = (id, text) => {
+
+       return async (dispatch) => {
+                const momentanea = collection(db, 'listaFavoritas')
+                const q = query(momentanea, where("id", "==", id))
+
+                const datos = await getDocs(q);
+                datos.forEach((peli) => {
+                        updateDoc(doc(db, 'listaFavoritas', peli.id), {text: text})
+                })
+                dispatch(readListAsync())
+       }
+} 

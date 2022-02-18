@@ -110,7 +110,6 @@ const Listado = () => {
 
   const [peliculas, setPeliculas] = useState([]);
   const favoritas = useSelector(store => store.Listado)
-  console.log(favoritas.peliculas, ' favs');
 
 
 
@@ -146,7 +145,6 @@ const Listado = () => {
     //revisar si el settimeout es la manera mas optima para ejecutar está funcion
     setTimeout(function getVotes() {
       let votes = document.getElementsByClassName('borderAzul')
-      console.log(votes[5].id);
 
       for (let element of votes) {
         if (element.id >= 7) {
