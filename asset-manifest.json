@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/JuanOso/BlockMaster/static/css/main.2dea3aea.css",
+    "main.js": "/JuanOso/BlockMaster/static/js/main.c01f3056.js",
+    "static/media/logo-blockBuster.png": "/JuanOso/BlockMaster/static/media/logo-blockBuster.ef7306a5589b3508e0e1.png",
+    "index.html": "/JuanOso/BlockMaster/index.html",
+    "main.2dea3aea.css.map": "/JuanOso/BlockMaster/static/css/main.2dea3aea.css.map",
+    "main.c01f3056.js.map": "/JuanOso/BlockMaster/static/js/main.c01f3056.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2dea3aea.css",
+    "static/js/main.c01f3056.js"
+  ]
+}
