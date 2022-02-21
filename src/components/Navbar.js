@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 //import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo-blockBuster.png'
 
 
 export const Navbar = () => {
 
+  const [ubicacion, setUbicacion] = useState('')
+  
+  const search = useRef(null)
 
-  //const navigate = useNavigate()
-  //onClick={()=> navigate(`/favoritas`)}
+  useEffect(() => {
+    getCoordenadas();
+  },)
+
+
+  const getCoordenadas = () => {
+    navigator.geolocation.getCurrentPosition(position => {
+     const { latitude, longitude } = position.coords;
+     let url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyDvS3_rBwM7RJYjDOnPzquTpJVlskDs7nI';
+     console.log(latitude,longitude)
+     getUbicacion(url);
+   });
+  }
+
+   const getUbicacion = async(endpoint) => {
+    const resp = await fetch(endpoint);
+    const {results} = await resp.json();
+    console.log(results[0].address_components[3].long_name + ', ' + results[0].address_components[4].long_name )
+    setUbicacion(results[0].address_components[3].long_name + ', ' + results[0].address_components[4].long_name)
+  }
+
+  const buscar = () => {
+    console.log(search.current.value);
+  }
+   
+ 
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,10 +56,13 @@ export const Navbar = () => {
         <li className="nav-item ">
           <a className="nav-link  mx-3" href="/favoritas" >Mi lista</a>
         </li>
+        <li className="nav-item ">
+          <a className="nav-link  mx-3" href="/favoritas" >{ubicacion}</a>
+        </li>
       </ul>
       <div className="col-lg-6 col-sm-10 ms-3 me-5">
       <form className='d-flex '>
-        <input className="form-control rounded-0 rounded-start py-2" style={{width: "80%"}} type="search" placeholder="Busca tu película favorita" aria-label="Search"/>
+        <input className="form-control rounded-0 rounded-start py-2" style={{width: "80%"}} type="search" placeholder="Busca tu película favorita" aria-label="Search" ref={search} onChange={buscar}/>
         <span className="bgYellow mx-0 d-flex justify-content-center align-items-center" style={{width: "15%"}}>
             <i className="fa-solid fa-magnifying-glass "></i>
         </span>
