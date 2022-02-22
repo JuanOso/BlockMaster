@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from '../container/Home'
 import Favs from '../container/Favs'
 import { Provider } from 'react-redux'
@@ -10,7 +10,7 @@ import { Navbar } from '../components/Navbar'
 export default class AppRouter extends Component {
     render() {
         return (
-            <BrowserRouter >
+            <HashRouter>
                 <Provider store={store}>
                 <Navbar />
                     <Routes>
@@ -19,7 +19,7 @@ export default class AppRouter extends Component {
                     </Routes>
                 </Provider>
 
-            </BrowserRouter>
+            </HashRouter>
 
         )
     }
