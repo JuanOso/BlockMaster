@@ -10,7 +10,7 @@ import { Navbar } from '../components/Navbar'
 export default class AppRouter extends Component {
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <Provider store={store}>
                 <Navbar />
                     <Routes>
