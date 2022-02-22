@@ -10,10 +10,10 @@ import { Navbar } from '../components/Navbar'
 export default class AppRouter extends Component {
     render() {
         return (
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <BrowserRouter >
                 <Provider store={store}>
                 <Navbar />
-                    <Routes>
+                    <Routes basename={process.env.PUBLIC_URL}>
                         <Route path="/" element={<Home />} />
                         <Route path="/favoritas" element={<Favs />} />
                     </Routes>
