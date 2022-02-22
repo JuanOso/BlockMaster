@@ -13,7 +13,7 @@ export default class AppRouter extends Component {
             <BrowserRouter >
                 <Provider store={store}>
                 <Navbar />
-                    <Routes basename={process.env.PUBLIC_URL}>
+                    <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/favoritas" element={<Favs />} />
                     </Routes>
