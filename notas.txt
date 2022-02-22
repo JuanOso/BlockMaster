@@ -23,4 +23,6 @@ https://github.com/girengri/ubicacionactualreact/blob/master/src/App.js
 kraken front6
 https://app.gitkraken.com/glo/card/42c512f4b8dc449c8ab5e1ad5de9f2cd
 
+crA 28B 66 39
+
 

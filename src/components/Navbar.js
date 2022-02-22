@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo-blockBuster.png'
 
 
 export const Navbar = () => {
 
   const [ubicacion, setUbicacion] = useState('')
+  const navegar = useNavigate()
   
   const search = useRef(null)
 
@@ -54,10 +55,10 @@ export const Navbar = () => {
           <a className="nav-link mx-3" href="/">Mas valoradas</a>
         </li>
         <li className="nav-item ">
-          <a className="nav-link  mx-3" href="/favoritas" >Mi lista</a>
+          <span style={{cursor: 'pointer'}} className="nav-link  mx-3" onClick={()=> navegar('/favoritas')}>Mi lista</span>
         </li>
         <li className="nav-item ">
-          <a className="nav-link  mx-3" href="/favoritas" >{ubicacion}</a>
+          <span className="nav-link  mx-3">{ubicacion}</span>
         </li>
       </ul>
       <div className="col-lg-6 col-sm-10 ms-3 me-5">

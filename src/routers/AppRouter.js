@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import {  HashRouter, Route, Routes } from 'react-router-dom'
 import Home from '../container/Home'
 import Favs from '../container/Favs'
 import { Provider } from 'react-redux'
