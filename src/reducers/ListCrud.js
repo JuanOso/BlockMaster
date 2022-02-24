@@ -10,14 +10,6 @@ export const ListCrud = (state = initialState, action) => {
         return {
             peliculas: action.payload
         }
-        case typesCrud.delete:
-            return {
-                peliculas: state.peliculas.filter(peli => peli.id !== action.payload)
-            }
-        /* case typesCrud.update:
-            return {
-
-            }   */  
         default:
             return state
     }

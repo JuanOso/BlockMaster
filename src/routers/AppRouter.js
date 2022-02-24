@@ -5,6 +5,7 @@ import Favs from '../container/Favs'
 import { Provider } from 'react-redux'
 import { store } from '../store/store'
 import { Navbar } from '../components/Navbar'
+import TopRated from '../container/TopRated'
 
 
 export default class AppRouter extends Component {
@@ -16,6 +17,7 @@ export default class AppRouter extends Component {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/favoritas" element={<Favs />} />
+                        <Route path="/mejores" element={<TopRated />} />
                     </Routes>
                 </Provider>
 

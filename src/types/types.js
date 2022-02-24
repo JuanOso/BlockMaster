@@ -1,6 +1,7 @@
 export const types = {
     total: 'total',
-    busqueda: 'busqueda'
+    busqueda: 'busqueda',
+    top: 'top rated movies'
 }
 
 export const typesCrud = {

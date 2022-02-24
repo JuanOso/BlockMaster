@@ -3,9 +3,9 @@ import { db } from "../firebase/firebaseConfig"
 import { typesCrud } from "../types/types"
 
 
-export const agregarLista = (pelicula, peliculas) => {
+export const agregarLista = (pelicula) => {
         
-        console.log(peliculas);
+        //console.log(peliculas);
 
 
         addDoc(collection(db, 'listaFavoritas'), pelicula) 

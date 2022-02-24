@@ -19,7 +19,7 @@ export const Navbar = () => {
     navigator.geolocation.getCurrentPosition(position => {
      const { latitude, longitude } = position.coords;
      let url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyDvS3_rBwM7RJYjDOnPzquTpJVlskDs7nI';
-     console.log(latitude,longitude)
+     //console.log(latitude,longitude)
      getUbicacion(url);
    });
   }
@@ -27,7 +27,7 @@ export const Navbar = () => {
    const getUbicacion = async(endpoint) => {
     const resp = await fetch(endpoint);
     const {results} = await resp.json();
-    console.log(results[0].address_components[3].long_name + ', ' + results[0].address_components[4].long_name )
+    //console.log(results[0].address_components[3].long_name + ', ' + results[0].address_components[4].long_name )
     setUbicacion(results[0].address_components[3].long_name + ', ' + results[0].address_components[4].long_name)
   }
 
@@ -40,19 +40,19 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid offset-1 py-3">
-    <a className="navbar-brand" href="/">
+    <span className="navbar-brand" style={{cursor: 'pointer'}} onClick={()=> navegar('/')}>
       <img src={logo} alt="" width="80"  className="d-inline-block align-text-top"/>
-    </a>
+    </span>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active mx-3" aria-current="page" href="/">Todas</a>
+          <span style={{cursor: 'pointer'}} className="nav-link active mx-3" aria-current="page" onClick={()=> navegar('/')}>Todas</span>
         </li>
         <li className="nav-item">
-          <a className="nav-link mx-3" href="/">Mas valoradas</a>
+        <span style={{cursor: 'pointer'}} className="nav-link  mx-3" onClick={()=> navegar('/mejores')}>Mas valoradas</span>
         </li>
         <li className="nav-item ">
           <span style={{cursor: 'pointer'}} className="nav-link  mx-3" onClick={()=> navegar('/favoritas')}>Mi lista</span>
