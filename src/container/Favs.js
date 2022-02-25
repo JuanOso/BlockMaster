@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteMovieasync, readListAsync, updateMovieAsync } from '../actions/crudFirebase';
+import { Navbar } from '../components/Navbar';
 
 const Favs = () => {
 
@@ -9,7 +10,7 @@ const Favs = () => {
     const { peliculas } = useSelector(store => store.Listado)
     const [estadoModal, SetEstadoModal] = useState([])
     const {text } = estadoModal
-    console.log(text);
+    //console.log(text);
 
     const formik = useFormik({
         initialValues: {
@@ -34,6 +35,7 @@ const Favs = () => {
 
     return (
         <div>
+            <Navbar />
             <h1 className='text-light text-center mt-5'>Peliculas favoritas</h1>
 
             <div className='d-flex col-10 offset-1 justify-content-center mt-5 flex-wrap'>

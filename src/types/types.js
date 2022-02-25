@@ -10,3 +10,8 @@ export const typesCrud = {
     update: 'update',
     delete: 'delete'    
 }
+
+export const typesLog = {
+    login: 'login',
+    register: 'register'
+}

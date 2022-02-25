@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { topRatedAsync } from '../actions/actionTotalBusqueda';
 import { agregarLista } from '../actions/crudFirebase';
 import { AverageVote, BtnDespues, Card, CardBack, CardFront } from '../components/Listado';
+import { Navbar } from '../components/Navbar';
 
 const TopRated = () => {
 
@@ -54,6 +55,8 @@ const TopRated = () => {
     
   
     return (
+      <>
+      <Navbar />
       <div className='mt-5 offset-1 col-10'>
         <h2 style={{ color: "white" }}>Mejor calificadas</h2>
         <div className='d-flex justify-content-start flex-wrap'>
@@ -96,6 +99,8 @@ const TopRated = () => {
           />
         </div>
       </div>
+      </>
+
     )
   }
   
