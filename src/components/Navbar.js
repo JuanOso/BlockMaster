@@ -12,11 +12,11 @@ export const Navbar = () => {
   const [ubicacion, setUbicacion] = useState('')
   const {displayname} = useSelector(store => store.Log)
 
-  const cutName = () => {
+/*   const cutName = () => {
     const fName = displayname.split(' ')
     const firstName = fName[0]
     return firstName
-  }
+  } */
 
   const navegar = useNavigate()
 
@@ -78,7 +78,7 @@ export const Navbar = () => {
         </li>
         <li className="nav-item dropdown">
           <span className="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{cursor: 'pointer'}}>
-            {cutName()}
+            {displayname}
           </span>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li style={{cursor: 'pointer'}} onClick={()=> handleLogout()}><span className="dropdown-item" >Cerrar sesión</span></li>
