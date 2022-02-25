@@ -1,6 +1,7 @@
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { google } from "../firebase/firebaseConfig";
 import { typesLog } from "../types/types";
+
 
 export const loginGoogle = () => {
 
@@ -9,6 +10,7 @@ export const loginGoogle = () => {
         signInWithPopup(auth,google)
         .then(({user}) => {
             dispatch(loginSincronico(user.uid, user.displayName))
+
         })
         .catch(e => {
             console.log(e);
@@ -72,3 +74,24 @@ export const loginEmail = (email, password) => {
         })
     }
 } 
+
+export const logout = () => {
+    return( dispatch) => {
+        const auth = getAuth();
+        signOut(auth)
+        .then(user => {
+            console.log(user);
+            dispatch(logoutSincrono())
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+}
+
+export const logoutSincrono = () => {
+   return{
+       type: typesLog.logout,
+       payload: {}
+   }
+}

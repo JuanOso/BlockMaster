@@ -60,14 +60,14 @@ const Favs = () => {
                             <div className="modal-header">
                                 <h5 className="modal-title" id="exampleModalLabel">{estadoModal.title}</h5>
                             </div>
-                            <p><span className='fw-bold'>Nota:</span>{estadoModal.text}</p>
+                            <p><span className='fw-bold'>Nota:</span>{text}</p>
                             <form onSubmit={formik.handleSubmit}>
                                 <div className="modal-body w-100">
                                     <textarea
                                         type="text"
                                         className='w-100'
                                         name='text'
-                                        defaultValue={estadoModal.text}
+                                        //defaultValue={estadoModal.text}
                                         //value={formik.initialValues.text}
                                         style={{ height: 200 }}
                                         ></textarea>

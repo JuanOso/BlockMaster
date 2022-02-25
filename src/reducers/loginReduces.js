@@ -5,6 +5,9 @@ export const loginReducer = (state = {}, action) => {
         case typesLog.login:
             
             return action.payload
+
+        case typesLog.logout:
+            return action.payload   
     
         default:
             return state

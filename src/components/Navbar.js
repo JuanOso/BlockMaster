@@ -1,12 +1,31 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { logout } from '../actions/actionLogin'
 import logo from '../assets/logo-blockBuster.png'
+
+
 
 
 export const Navbar = () => {
 
   const [ubicacion, setUbicacion] = useState('')
+  const {displayname} = useSelector(store => store.Log)
+
+  const cutName = () => {
+    const fName = displayname.split(' ')
+    const firstName = fName[0]
+    return firstName
+  }
+
   const navegar = useNavigate()
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+      dispatch(logout())
+      navegar("/login")
+  }
   
   const search = useRef(null)
 
@@ -56,6 +75,14 @@ export const Navbar = () => {
         </li>
         <li className="nav-item ">
           <span style={{cursor: 'pointer'}} className="nav-link  mx-3" onClick={()=> navegar('/favoritas')}>Mi lista</span>
+        </li>
+        <li className="nav-item dropdown">
+          <span className="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style={{cursor: 'pointer'}}>
+            {cutName()}
+          </span>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li style={{cursor: 'pointer'}} onClick={()=> handleLogout()}><span className="dropdown-item" >Cerrar sesión</span></li>
+          </ul>
         </li>
         <li className="nav-item ">
           <span className="nav-link  mx-3">{ubicacion}</span>

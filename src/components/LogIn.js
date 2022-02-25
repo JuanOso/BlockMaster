@@ -44,12 +44,12 @@ const InicioSesion = () => {
                        {/*  <input className="input" type="text" placeholder="Nombre" /> */}
                         <input className="input" type="text" placeholder="Correo"
                         value={email}
-                        name={email}
+                        name='email'
                         onChange={handleInputChange}
                          />
                         <input className="input" type="password" placeholder="Contraseña" 
                         value={password}
-                        name={password}
+                        name='password'
                         onChange={handleInputChange}
                         />
                         <button className="button" type='submit'>Iniciar sesión</button>

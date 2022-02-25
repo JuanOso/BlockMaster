@@ -13,5 +13,6 @@ export const typesCrud = {
 
 export const typesLog = {
     login: 'login',
-    register: 'register'
+    register: 'register',
+    logout: 'logout'
 }
