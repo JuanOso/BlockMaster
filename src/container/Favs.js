@@ -17,6 +17,7 @@ const Favs = () => {
             text: ""
         },
         onSubmit: (data) => {
+            console.log(data);
 
             dispatch(updateMovieAsync(estadoModal.id, data.text))
         },
@@ -70,6 +71,7 @@ const Favs = () => {
                                         //defaultValue={estadoModal.text}
                                         //value={formik.initialValues.text}
                                         style={{ height: 200 }}
+                                        onChange={formik.handleChange}
                                         ></textarea>
                                 </div>
                                 <div className="modal-footer">
